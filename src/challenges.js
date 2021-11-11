@@ -76,9 +76,39 @@ function fizzBuzz(numbers) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(string) {
+  let stringArray = string.split('');
+  let encoded = '';
+  for (let char of stringArray) {
+    switch (char) {
+    case 'a':
+      encoded += '1';
+      break;
+
+    case 'e':
+      encoded += '2';
+      break;
+
+    case 'i':
+      encoded += '3';
+      break;
+
+    case 'o':
+      encoded += '4';
+      break;
+
+    case 'u':
+      encoded += '5';
+      break;
+
+    default:
+      encoded += char;
+      break;
+    }
+  }
+  return encoded;
 }
+
 function decode() {
   // seu código aqui
 }
