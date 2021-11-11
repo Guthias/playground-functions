@@ -14,8 +14,12 @@ function splitSentence(frase) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(palavras) {
+  let primeiraPalavra = palavras[0];
+  let ultimaPalavra = palavras[palavras.length - 1];
+  let palvrasJuntas = ultimaPalavra + ', ' + primeiraPalavra;
+
+  return palvrasJuntas;
 }
 
 // Desafio 5
