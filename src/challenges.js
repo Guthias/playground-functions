@@ -15,11 +15,7 @@ function splitSentence(frase) {
 
 // Desafio 4
 function concatName(palavras) {
-  let primeiraPalavra = palavras[0];
-  let ultimaPalavra = palavras[palavras.length - 1];
-  let palvrasJuntas = ultimaPalavra + ', ' + primeiraPalavra;
-
-  return palvrasJuntas;
+  return `${palavras[palavras.length - 1]}, ${palavras[0]}`;
 }
 
 // Desafio 5
