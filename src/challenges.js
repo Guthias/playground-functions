@@ -109,8 +109,37 @@ function encode(string) {
   return encoded;
 }
 
-function decode() {
-  // seu código aqui
+function decode(string) {
+  let stringArray = string.split('');
+  let decoded = '';
+  for (let char of stringArray) {
+    switch (char) {
+    case '1':
+      decoded += 'a';
+      break;
+
+    case '2':
+      decoded += 'e';
+      break;
+
+    case '3':
+      decoded += 'i';
+      break;
+
+    case '4':
+      decoded += 'o';
+      break;
+
+    case '5':
+      decoded += 'u';
+      break;
+
+    default:
+      decoded += char;
+      break;
+    }
+  }
+  return decoded;
 }
 
 module.exports = {
