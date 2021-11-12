@@ -16,8 +16,25 @@ function techList(tecnologias, aluno) {
 }
 
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function generatePhoneNumber(numbers) {
+  // A função não esta identificadno repetição de numeros
+  if (numbers.length !== 11) {
+    return 'Array com tamanho incorreto.';
+  }
+
+  let phoneNumber = '(';
+  for (let number of numbers) {
+    if (number < 0 || number > 9) {
+      return 'não é possível gerar um número de telefone com esses valores';
+    }
+    phoneNumber += number;
+  }
+  /** Precisei consultar a DevMedia para fazer esse trecho do codigo
+   * Source https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
+   */
+  phoneNumber = phoneNumber.replace(/(\d{2})(\d{5})(\d{4})/, '$1) $2-$3');
+
+  return phoneNumber;
 }
 
 // Desafio 12
