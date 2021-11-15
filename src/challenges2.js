@@ -16,12 +16,25 @@ function techList(tecnologias, aluno) {
 }
 
 // Desafio 11
+function checkRepeatedNumbers(array, maxRepeated) {
+  let repeatedTimes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  for (let number of array) {
+    repeatedTimes[number] += 1;
+    if (repeatedTimes[number] >= maxRepeated) {
+      return false;
+    }
+  }
+  return true;
+}
+
 function generatePhoneNumber(numbers) {
-  // A função não esta identificadno repetição de numeros
   if (numbers.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
 
+  if (!checkRepeatedNumbers(numbers, 3)) {
+    return 'não é possível gerar um número de telefone com esses valores';
+  }
   let phoneNumber = '(';
   for (let number of numbers) {
     if (number < 0 || number > 9) {
