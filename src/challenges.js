@@ -56,23 +56,28 @@ function catAndMouse(mouse, cat1, cat2) {
   }
 }
 
+function buzzFizz(number) {
+  if (number % 3 === 0 && number % 5 === 0) {
+    return 'fizzBuzz';
+  }
+  if (number % 3 === 0) {
+    return 'fizz';
+  }
+  if (number % 5 === 0) {
+    return 'buzz';
+  }
+  return 'bug!';
+}
+
 // Desafio 8
 function fizzBuzz(numbers) {
-  let buzzFizz = [];
+  let fizzBuzzArray = [];
 
   for (let number of numbers) {
-    if (number % 3 === 0 && number % 5 === 0) {
-      buzzFizz.push('fizzBuzz');
-    } else if (number % 3 === 0) {
-      buzzFizz.push('fizz');
-    } else if (number % 5 === 0) {
-      buzzFizz.push('buzz');
-    } else {
-      buzzFizz.push('bug!');
-    }
+    fizzBuzzArray.push(buzzFizz(number));
   }
 
-  return buzzFizz;
+  return fizzBuzzArray;
 }
 
 // Desafio 9
