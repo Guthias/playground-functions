@@ -88,35 +88,13 @@ function encode(string) {
 }
 
 function decode(string) {
-  let stringArray = string.split('');
-  let decoded = '';
-  for (let char of stringArray) {
-    switch (char) {
-    case '1':
-      decoded += 'a';
-      break;
+  let decoded = string;
+  decoded = decoded.replace(/1/gi, 'a');
+  decoded = decoded.replace(/2/gi, 'e');
+  decoded = decoded.replace(/3/gi, 'i');
+  decoded = decoded.replace(/4/gi, 'o');
+  decoded = decoded.replace(/5/gi, 'u');
 
-    case '2':
-      decoded += 'e';
-      break;
-
-    case '3':
-      decoded += 'i';
-      break;
-
-    case '4':
-      decoded += 'o';
-      break;
-
-    case '5':
-      decoded += 'u';
-      break;
-
-    default:
-      decoded += char;
-      break;
-    }
-  }
   return decoded;
 }
 
