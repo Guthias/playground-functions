@@ -47,6 +47,10 @@ function triangleCheck(a, b, c) {
 
 // Desafio 13
 function hydrate(phrase) {
+  /** Precisei consultar o StackOverflow para separar os numeros da string
+   * Source: https://stackoverflow.com/questions/1623221/how-to-find-a-number-in-a-string-using-javascript
+   */
+
   let alcoholCup = phrase.match(/\d+/g);
   let waterCup = 0;
 
