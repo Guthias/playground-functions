@@ -16,38 +16,34 @@ function techList(tecnologias, aluno) {
 }
 
 // Desafio 11
-function checkRepeatedNumbers(array, maxRepeated) {
+function validNumbers(array, maxRepeated) {
   let repeatedTimes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   for (let number of array) {
-    repeatedTimes[number] += 1;
-    if (repeatedTimes[number] >= maxRepeated) {
+    if (repeatedTimes[number] >= maxRepeated - 1 || number < 0 || number > 9) {
       return false;
     }
+    repeatedTimes[number] += 1;
   }
   return true;
 }
 
-function generatePhoneNumber(numbers) {
-  if (numbers.length !== 11) {
+function generatePhoneNumber(phoneNumberArray) {
+  let phoneNumberFormated = '(';
+
+  if (phoneNumberArray.length !== 11) {
     return 'Array com tamanho incorreto.';
   }
-
-  if (!checkRepeatedNumbers(numbers, 3)) {
+  if (!validNumbers(phoneNumberArray, 3)) {
     return 'não é possível gerar um número de telefone com esses valores';
   }
-  let phoneNumber = '(';
-  for (let number of numbers) {
-    if (number < 0 || number > 9) {
-      return 'não é possível gerar um número de telefone com esses valores';
-    }
-    phoneNumber += number;
+  for (let number of phoneNumberArray) {
+    phoneNumberFormated += number;
   }
-  /** Precisei consultar a DevMedia para fazer esse trecho do codigo
-   * Source https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
-   */
-  phoneNumber = phoneNumber.replace(/(\d{2})(\d{5})(\d{4})/, '$1) $2-$3');
-
-  return phoneNumber;
+  /** Precisei consultar a DevMedia para utilizr o Replace
+    * Source https://www.devmedia.com.br/javascript-replace-substituindo-valores-em-uma-string/39176
+    */
+  phoneNumberFormated = phoneNumberFormated.replace(/(\d{2})(\d{5})(\d{4})/, '$1) $2-$3');
+  return phoneNumberFormated;
 }
 
 // Desafio 12
