@@ -77,35 +77,13 @@ function fizzBuzz(numbers) {
 
 // Desafio 9
 function encode(string) {
-  let stringArray = string.split('');
-  let encoded = '';
-  for (let char of stringArray) {
-    switch (char) {
-    case 'a':
-      encoded += '1';
-      break;
+  let encoded = string;
+  encoded = encoded.replace(/a/gi, '1');
+  encoded = encoded.replace(/e/gi, '2');
+  encoded = encoded.replace(/i/gi, '3');
+  encoded = encoded.replace(/o/gi, '4');
+  encoded = encoded.replace(/u/gi, '5');
 
-    case 'e':
-      encoded += '2';
-      break;
-
-    case 'i':
-      encoded += '3';
-      break;
-
-    case 'o':
-      encoded += '4';
-      break;
-
-    case 'u':
-      encoded += '5';
-      break;
-
-    default:
-      encoded += char;
-      break;
-    }
-  }
   return encoded;
 }
 
